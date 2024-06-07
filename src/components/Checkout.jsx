@@ -26,7 +26,7 @@ export default function Checkout() {
     error,
     sendRequest,
     clearData
-  } = useHttp('http://localhost:3000/orders', requestConfig);
+  } = useHttp('https://us-central1-food-ordering-b3d4f.cloudfunctions.net/api/orders', requestConfig);
 
   const cartTotal = cartCtx.items.reduce(
     (totalPrice, item) => totalPrice + item.quantity * item.price,

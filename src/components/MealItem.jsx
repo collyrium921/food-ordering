@@ -13,7 +13,7 @@ export default function MealItem({ meal }) {
   return (
     <li className="meal-item">
       <article>
-        <img src={`http://localhost:3000/${meal.image}`} alt={meal.name} />
+        <img src={`https://us-central1-food-ordering-b3d4f.cloudfunctions.net/api/${meal.image}`} alt={meal.name} />
         <div>
           <h3>{meal.name}</h3>
           <p className="meal-item-price">

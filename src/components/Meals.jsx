@@ -23,7 +23,7 @@ export default function Meals() {
     data: loadedMeals,
     isLoading,
     error,
-  } = useHttp("http://localhost:3000/meals",requestConfig,[]);
+  } = useHttp("https://us-central1-food-ordering-b3d4f.cloudfunctions.net/api/meals",requestConfig,[]);
 
   if(isLoading) {
     return <p className="center">Fetching meals...</p>
