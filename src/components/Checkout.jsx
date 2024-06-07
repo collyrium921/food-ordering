@@ -8,7 +8,7 @@ import Button from './UI/Button.jsx';
 import UserProgressContext from '../store/UserProgressContext.jsx';
 import useHttp from '../hooks/useHttp.js';
 import Error from './Error.jsx';
-
+import { serviceUrl } from '../util/helper.js';
 const requestConfig = {
   method: 'POST',
   headers: {
@@ -26,7 +26,7 @@ export default function Checkout() {
     error,
     sendRequest,
     clearData
-  } = useHttp('https://us-central1-food-ordering-b3d4f.cloudfunctions.net/api/orders', requestConfig);
+  } = useHttp(`${serviceUrl}/orders`, requestConfig);
 
   const cartTotal = cartCtx.items.reduce(
     (totalPrice, item) => totalPrice + item.quantity * item.price,

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { currencyFormatter } from "../util/formatting";
 import Button from "./UI/Button";
 import CartContext from "../store/CartContext";
-
+import { serviceUrl } from "../util/helper";
 export default function MealItem({ meal }) {
   const cartCtx =useContext(CartContext);
 
@@ -13,7 +13,7 @@ export default function MealItem({ meal }) {
   return (
     <li className="meal-item">
       <article>
-        <img src={`https://us-central1-food-ordering-b3d4f.cloudfunctions.net/api/${meal.image}`} alt={meal.name} />
+        <img src={`${serviceUrl}/${meal.image}`} alt={meal.name} />
         <div>
           <h3>{meal.name}</h3>
           <p className="meal-item-price">

@@ -260,3 +260,22 @@ h1 {
     transform: translateY(0);
   }
 }
+
+@media screen and (max-width:768px){
+  #main-header button{
+    font-size: 1rem;
+  }  
+  #main-header #title img{
+    width: 2rem;
+    height: 2rem;
+  }
+  h1{
+    font-size: 1rem;
+  }
+  #meals{
+    margin: 1rem auto;
+  }
+  #main-header{
+    padding: 2rem 10% 0 10%;
+  }
+}

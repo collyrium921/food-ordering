@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MealItem from "./MealItem";
 import useHttp from "../hooks/useHttp";
 import Error from "./Error";
+import { serviceUrl } from "../util/helper";
 const requestConfig ={}
 export default function Meals() {
   // const [loadedMeals, setLoadedMeals] = useState([]);
@@ -23,7 +24,7 @@ export default function Meals() {
     data: loadedMeals,
     isLoading,
     error,
-  } = useHttp("https://us-central1-food-ordering-b3d4f.cloudfunctions.net/api/meals",requestConfig,[]);
+  } = useHttp(`${serviceUrl}/meals`,requestConfig,[]);
 
   if(isLoading) {
     return <p className="center">Fetching meals...</p>
